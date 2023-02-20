@@ -1,0 +1,110 @@
+@use "../var/colors"as *;
+@use "../var/mixins"as *;
+@use "../var/container"as *;
+
+$icons: (ic-box-1, ic-box-2, ic-box-3, ic-box-4);
+
+%icon {
+    content: "";
+    display: inline-block;
+    width: 78px;
+    height: 60px;
+    background: $grey-lig;
+    border-radius: 6px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    margin-right: 0;
+    margin-bottom: 20px;
+    @include sm {
+        margin-right: 31px;
+        margin-bottom: 0;
+    }
+}
+
+
+@each $icon in $icons {
+    .#{$icon} {
+        &::before {
+            background-image: url(../img/#{$icon}.svg);
+            @extend %icon;
+        }
+    }
+}
+
+.start {
+    background: url('../uploads/bg-start.png') left bottom no-repeat;
+    @include sm {
+        background: url('../uploads/bg-start.png') left top no-repeat;
+    }
+    background-size: contain;
+    min-height: 661px;
+    margin-top: 10px;
+    @include sm {
+        margin-top: 71px;
+    }
+    .row-start {
+        margin: 0;
+        padding: 0;
+        justify-content: space-around;
+        align-items: flex-start;
+        text-align: center;
+        @include sm {
+            text-align: left;
+            padding: 0 47px;
+            
+        }
+        .start-img {
+            order: 1;
+            margin-top: 50px;
+            @include sm {
+                order: -1;
+                margin-top: 0;
+            }
+        }
+
+        .title-start-info {
+            font-weight: 700;
+            color: $blue;
+            margin: 0 0 30px;
+            font-size: 21px;
+            @include sm {
+                font-size: 36px;
+                margin: 0 0 65px;
+            }
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            @include sm {
+                flex-direction: row;
+                align-items: flex-start;
+                margin-bottom: 42px;
+            }
+            margin-bottom: 17px;
+            line-height: 24.3px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            span {
+                font-weight: 600;
+                font-size: 16px;
+                color: $blue;
+                @include sm {
+                    font-size: 24px;
+                }
+            }
+
+            p {
+                margin: 8px 0 0;
+                font-size: 14px;
+                @include sm {
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}

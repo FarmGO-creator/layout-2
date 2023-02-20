@@ -1,0 +1,95 @@
+@use "../var/colors"as *;
+@use "../var/mixins"as *;
+@use "../var/container"as *;
+
+.download {
+    margin: 13.444% 0 11%;
+    .block-download {
+        background: $blue-lig-2;
+        border-radius: 0;
+        @include sm {
+            border-radius: 20px;
+        }
+
+        .row-download {
+            align-items: flex-start;
+            padding: 0 15px;
+
+            .offer-download {
+                color: $grey-lig;
+                padding-top: 41px;
+                text-align: center;
+                @include sm {
+                    padding: 52px 0 0 71px;
+                    text-align: left;
+                }
+                max-width: 500px;
+
+                h3 {
+                    font-weight: 300;
+                    font-size: 21px;
+                    line-height: 115%;
+                    color: $grey-lig;
+                    margin: 0 0 27px;
+                    @include sm {
+                        font-size: 36px;
+                    }
+                }
+                p {
+                    line-height: 25.2px;
+                    margin: 0;
+                    font-size: 12px;
+                    line-height: 16.8px;
+                    @include sm {
+                        font-size: 18px;
+                        line-height: 25.2px;
+
+                    }
+                }
+
+                .download-links {
+                    padding-top: 44px;
+
+                    a {
+                        width: 162px;
+                        height: 50px;
+                        display: inline-block;
+                        white-space: nowrap;
+                        text-indent: 170px;
+                        overflow: hidden;
+                        margin-right: 0;
+                        @include sm {
+                            margin-right: 14px;
+                        }
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+
+                        &.apple {
+                            background: url('../uploads/apple.png') no-repeat center center;
+                        }
+
+                        &.gplay {
+                            background: url('../uploads/gplay.png') no-repeat center center;
+                        }
+                    }
+                }
+            }
+
+            .col-img {
+                margin-top: auto;
+                img {
+                    margin-top: 0;
+                    @include lg {
+                        margin-top: -69px;
+                    }
+                    display: none;
+                    @include sm {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}

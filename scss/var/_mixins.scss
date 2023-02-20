@@ -1,0 +1,43 @@
+@use "../var/colors"as *;
+
+@mixin btn($py, $px, $fz, $color, $bag) {
+	padding: $py $px;
+	border: 2px solid #E5E5E5;
+	border-radius: 6px;
+	font-size: $fz;
+	background: $bag;
+	display: inline-block;
+	color: $color;
+	font-weight: 500;
+}
+
+
+@mixin lg {
+	@media screen and (min-width: 1024px) {
+		@content;
+	}
+}
+
+@mixin md {
+	@media screen and (min-width: 800px) {
+		@content;
+	}
+}
+
+@mixin sm {
+	@media screen and (min-width: 600px) {
+		@content;
+	}
+}
+
+@mixin sm-min {
+	@media screen and (min-width: 480px) {
+		@content;
+	}
+}
+
+@mixin hover {
+	@media (hover: hover) and (pointer: fine) {
+		@content;
+	}
+}

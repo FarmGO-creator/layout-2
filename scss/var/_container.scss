@@ -1,0 +1,40 @@
+@use "../var/mixins" as *;
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+    align-items: center;
+}
+
+@mixin make-col {
+    @for $i from 1 through 12 {
+        $width-col: 100%*$i/12;
+
+        &-#{$i} {
+            width: $width-col;
+            padding: 0;
+        }
+    }
+}
+
+.col {
+    @include make-col;
+}
+
+.col-sm {
+    @include sm {
+        @include make-col;
+    }
+}
+
+.col-md {
+    @include md {
+        @include make-col;
+    }
+}
+
+.col-lg {
+    @include lg {
+        @include make-col;
+    }
+}

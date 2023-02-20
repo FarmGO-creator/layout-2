@@ -1,0 +1,84 @@
+@use "../var/colors"as *;
+@use "../var/mixins"as *;
+@use "../var/container"as *;
+
+$icons: (ic-partners-1, ic-partners-2, ic-partners-3, ic-partners-4, ic-partners-5);
+
+%icon {
+    content: "";
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background: $grey-lig;
+    border-radius: 6px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    margin-bottom: 15px;
+}
+
+
+@each $icon in $icons {
+    .#{$icon} {
+        &::before {
+            background-image: url(../img/#{$icon}.svg);
+            @extend %icon;
+        }
+    }
+}
+
+.partners {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 75px;
+    @include lg {
+        margin-top: 10px;
+    }
+    h2 {
+        font-size: 18px;
+        color: $blue;
+        margin: 0 0 22px;
+        line-height: 22.5px;
+        @include sm {
+            font-size: 28px;
+            line-height: 35px;
+        }
+    }
+    p {
+        max-width: 841px;
+        margin: 0 auto;
+        line-height: 25.2px;
+        font-size: 14px;
+        @include sm {
+            font-size: 18px;
+        }
+    }
+    .boxes-partners {
+        justify-content: space-between;
+        .col-partners {
+            background: #FFFFFF;
+            box-shadow: 0px 16px 20px rgba(20, 27, 65, 0.03);
+            border-radius: 10px;
+            padding: 53px 0 33px 0;
+            margin-bottom: 20px;
+
+            @include lg {
+                margin-bottom: 0;
+                padding-left: 40px;
+            }
+
+            p {
+                font-size: 14px;
+                color: $blue;
+                @include sm {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    .btn-2 {
+        margin-top: 0;
+        @include sm {
+            margin-top: 58px;
+        }
+    }
+}

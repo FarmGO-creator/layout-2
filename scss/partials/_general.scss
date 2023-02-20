@@ -1,0 +1,43 @@
+body {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 18px;
+	color: #72727E;
+	line-height: 33.6px;
+	background: #ffffff;
+}
+
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+	font-size: 30px;
+	margin-top: 0;
+}
+
+a {
+	color: inherit;
+}
+
+.clearfix::after{
+	content: "";
+	display: table;
+	clear: both;
+}
+
+img, iframe{
+	max-width: 100%;
+	height: auto;
+	display: block;
+}

@@ -1,0 +1,27 @@
+@use "../var/colors"as *;
+@use "../var/mixins"as *;
+
+%active {
+    &:active {
+        box-shadow: 1px 2px 4px $black;
+    }
+}
+
+.btn {
+    @include btn(14px, 14px, 16px, $blue-lig, transparent);
+    @extend %active;
+}
+
+.btn-2 {
+    @include btn(14px, 6px, 18px, $white, $blue-lig);
+    border: none;
+    @extend %active;
+    @include sm {
+        @include btn(18px, 41px, 18px, $white, $blue-lig);
+    }
+}
+
+.btn-3 {
+    @include btn(14px, 40px, 16px, $blue-lig, $white);
+    @extend %active;
+}

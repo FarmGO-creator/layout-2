@@ -1,0 +1,44 @@
+@use "../var/colors"as *;
+@use "../var/mixins"as *;
+@use "../var/container"as *;
+
+.main-block {
+    background: url('../uploads/photo-phone-min.png') no-repeat right 320px,
+                url('../uploads/puzir.jpg') no-repeat top center;
+    @include sm {
+        background: url('../uploads/main-pic.png') no-repeat right top;
+        background-size: contain;
+    }
+    background-size: contain;
+    min-height: 625px;
+    .offer-block {
+        padding-top: 10.444%;
+        max-width: 620px;
+        text-align: center;
+        @include sm {
+            text-align: left;
+        }
+        h1 {
+            font-size: 36px;
+            line-height: 125%;
+            color: $blue;
+            margin: 0 0 20px;
+            font-size: 18px;
+            @include sm {
+                font-size: 36px;
+                margin: 0 0 40px;
+            }
+        }
+
+        p {
+            margin: 0 0 48px;
+            font-size: 16px;
+            line-height: 22.4px;
+            @include sm {
+                font-size: 24px;
+                line-height: 33.6px;
+                margin: 0 0 56px;
+            }
+        }
+    }
+}
